@@ -1,7 +1,13 @@
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./pages/Shared/Navbar/Navbar";
+
 function App() {
   return (
     <div>
-      <h1 className="text-primary text-2xl">Hello World</h1>
+      <Navbar />
+      <Routes>
+        <Route></Route>
+      </Routes>
     </div>
   );
 }
