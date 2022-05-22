@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Blogs from "./pages/Blogs/Blogs";
 import NotFound from "./pages/NotFound/NotFound";
 import Footer from "./pages/Shared/Footer/Footer";
 import Navbar from "./pages/Shared/Navbar/Navbar";
@@ -10,6 +11,7 @@ function App() {
     <div>
       <Navbar />
       <Routes>
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />
