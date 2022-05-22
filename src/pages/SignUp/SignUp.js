@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SignUpImg from "../../assets/login/signup.jpg";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const SignUp = () => {
   const {
     register,
@@ -117,9 +118,10 @@ const SignUp = () => {
                 <input
                   className="btn btn-primary capitalize font-normal w-full max-w-xs text-white"
                   type="submit"
-                  value="Sign Up"
+                  value="Create Account"
                 />
               </form>
+              <SocialLogin />
               <p>
                 Already have an account?
                 <Link className="text-primary" to="/signin">

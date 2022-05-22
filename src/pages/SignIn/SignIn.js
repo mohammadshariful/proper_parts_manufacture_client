@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SignInImg from "../../assets/login/signin.jpg";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const SignIn = () => {
   const {
     register,
@@ -100,6 +101,7 @@ const SignIn = () => {
               <label className="modal-button text-right text-primary cursor-pointer">
                 Forget your password?
               </label>
+              <SocialLogin />
               <p>
                 Don't have an account?
                 <Link className="text-primary" to="/signup">
