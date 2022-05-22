@@ -3,7 +3,7 @@ import { FaRegMoneyBillAlt, FaStar, FaTools, FaUsers } from "react-icons/fa";
 
 const BusinessSummary = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center my-10 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center my-20 gap-5">
       <div className="bg-white w-full p-10 text-center shadow-lg rounded-md">
         <div className="stat-title text-xl">Customers</div>
         <div>
