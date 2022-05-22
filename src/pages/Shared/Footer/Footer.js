@@ -149,11 +149,11 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-title">Newsletter</span>
-          <div className="form-control w-80">
+          <div className="form-control lg:w-80">
             <label className="label">
               <span className="label-text">Enter your email address</span>
             </label>
-            <div className="relative w-[250px] lg:w-full">
+            <div className="relative">
               <input
                 type="text"
                 placeholder="username@site.com"

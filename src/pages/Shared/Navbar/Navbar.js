@@ -27,15 +27,15 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link to="/blogs">
+        <Link to="/signin">
           <FiLogIn />
-          Login
+          SignIn
         </Link>
       </li>
     </>
   );
   return (
-    <div className="navbar lg:px-10 shadow-sm">
+    <div className="navbar lg:px-10 bg-white shadow-sm sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
