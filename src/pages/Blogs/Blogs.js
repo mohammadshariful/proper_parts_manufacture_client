@@ -21,8 +21,8 @@ const Blogs = () => {
           ipsum tenetur aspernatur voluptate!
         </p>
         <div className="flex items-center mt-2">
-          <div class="avatar online">
-            <div class="w-10 rounded-full">
+          <div className="avatar online">
+            <div className="w-10 rounded-full">
               <img src={authorImg} alt="authorImg" />
             </div>
           </div>
@@ -46,8 +46,8 @@ const Blogs = () => {
           ipsum tenetur aspernatur voluptate!
         </p>
         <div className="flex items-center mt-2">
-          <div class="avatar online">
-            <div class="w-10 rounded-full">
+          <div className="avatar online">
+            <div className="w-10 rounded-full">
               <img src={authorImg} alt="authorImg" />
             </div>
           </div>
@@ -71,8 +71,8 @@ const Blogs = () => {
           ipsum tenetur aspernatur voluptate!
         </p>
         <div className="flex items-center mt-2">
-          <div class="avatar online">
-            <div class="w-10 rounded-full">
+          <div className="avatar online">
+            <div className="w-10 rounded-full">
               <img src={authorImg} alt="authorImg" />
             </div>
           </div>
@@ -96,8 +96,8 @@ const Blogs = () => {
           ipsum tenetur aspernatur voluptate!
         </p>
         <div className="flex items-center mt-2">
-          <div class="avatar online">
-            <div class="w-10 rounded-full">
+          <div className="avatar online">
+            <div className="w-10 rounded-full">
               <img src={authorImg} alt="authorImg" />
             </div>
           </div>
@@ -121,8 +121,8 @@ const Blogs = () => {
           ipsum tenetur aspernatur voluptate!
         </p>
         <div className="flex items-center mt-2">
-          <div class="avatar online">
-            <div class="w-10 rounded-full">
+          <div className="avatar online">
+            <div className="w-10 rounded-full">
               <img src={authorImg} alt="authorImg" />
             </div>
           </div>
@@ -146,8 +146,8 @@ const Blogs = () => {
           ipsum tenetur aspernatur voluptate!
         </p>
         <div className="flex items-center mt-2">
-          <div class="avatar online">
-            <div class="w-10 rounded-full">
+          <div className="avatar online">
+            <div className="w-10 rounded-full">
               <img src={authorImg} alt="authorImg" />
             </div>
           </div>

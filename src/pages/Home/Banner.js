@@ -33,7 +33,7 @@ const Banner = () => {
                   consectetur eos, illum officiis inventore harum. Quasi facilis
                   itaque voluptas quisquam tenetur nobis laboriosam.
                 </p>
-                <button class="btn btn-primary">Get Started</button>
+                <button className="btn btn-primary">Get Started</button>
               </div>
             </div>
             <div className="w-full lg:w-50">
@@ -52,7 +52,7 @@ const Banner = () => {
                   consectetur eos, illum officiis inventore harum. Quasi facilis
                   itaque voluptas quisquam tenetur nobis laboriosam.
                 </p>
-                <button class="btn btn-primary">Get Started</button>
+                <button className="btn btn-primary">Get Started</button>
               </div>
             </div>
             <div className=" w-full lg:w-50">
@@ -71,7 +71,7 @@ const Banner = () => {
                   consectetur eos, illum officiis inventore harum. Quasi facilis
                   itaque voluptas quisquam tenetur nobis laboriosam.
                 </p>
-                <button class="btn btn-primary">Get Started</button>
+                <button className="btn btn-primary">Get Started</button>
               </div>
             </div>
             <div className="w-full lg:w-50">
