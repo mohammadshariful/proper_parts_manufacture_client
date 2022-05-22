@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SignInImg from "../../assets/login/signin.jpg";
+import auth from "../../Firebase/Firebase.init";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const SignIn = () => {
   const {
@@ -13,6 +14,7 @@ const SignIn = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
+  console.log(auth);
   return (
     <div className="hero min-h-screen bg-base-100">
       <div className="hero-content flex-col lg:flex-row-reverse">
