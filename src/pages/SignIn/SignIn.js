@@ -5,6 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SignInImg from "../../assets/login/signin.jpg";
 import auth from "../../Firebase/Firebase.init";
+import useToken from "../../hooks/useToken";
 import ForgetPassword from "../ForgetPassword/ForgetPassword";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
@@ -23,12 +24,12 @@ const SignIn = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-
+  const [token] = useToken(user);
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [user, navigate, from]);
+  }, [token, navigate, from]);
   if (loading) {
     return <Loading />;
   }

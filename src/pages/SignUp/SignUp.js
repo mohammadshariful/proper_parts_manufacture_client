@@ -8,6 +8,7 @@ import { FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import SignUpImg from "../../assets/login/signup.jpg";
 import auth from "../../Firebase/Firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
@@ -22,12 +23,13 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
+  const [token] = useToken(user);
 
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate("/");
     }
-  }, [user, navigate]);
+  }, [token, navigate]);
 
   if (loading || updating) {
     return <Loading />;
