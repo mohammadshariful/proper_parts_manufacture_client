@@ -1,20 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SignInImg from "../../assets/login/signin.jpg";
 import auth from "../../Firebase/Firebase.init";
+import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+
 const SignIn = () => {
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, navigate, from]);
+  if (loading) {
+    return <Loading />;
+  }
+
   const onSubmit = (data) => {
-    console.log(data);
+    signInWithEmailAndPassword(data.email, data.password);
   };
-  console.log(auth);
   return (
     <div className="hero min-h-screen bg-base-100">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -94,6 +112,11 @@ const SignIn = () => {
                   </label>
                 </div>
 
+                {error && (
+                  <p className="mb-2 text-error text-center">
+                    {error?.message}
+                  </p>
+                )}
                 <input
                   className="btn btn-primary capitalize font-normal w-full max-w-xs text-white"
                   type="submit"
