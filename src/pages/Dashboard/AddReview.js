@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import auth from "../../Firebase/Firebase.init";
 
 const AddReview = () => {
@@ -9,6 +10,7 @@ const AddReview = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
   const onSubmit = (data) => {
     const review = {
@@ -17,8 +19,28 @@ const AddReview = () => {
       userName: user?.displayName,
       photoUrl: user?.photoURL,
     };
-    console.log(review);
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          toast.success(
+            `Review Add Successful
+              `,
+            {
+              position: toast.POSITION.TOP_CENTER,
+            }
+          );
+          reset();
+        }
+      });
   };
+
   return (
     <div className="card w-full lg:max-w-lg mx-auto bg-base-100 shadow-xl">
       <div className="card-body">

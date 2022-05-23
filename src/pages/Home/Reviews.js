@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Autoplay, Keyboard, Navigation, Scrollbar } from "swiper";
 // Import Swiper styles
 import "swiper/css";
@@ -12,6 +13,7 @@ import Loading from "../Shared/Loading/Loading";
 import UserReview from "./UserReview";
 
 const Reviews = () => {
+  const navigate = useNavigate();
   const url = "http://localhost:5000/reviews";
   const { storeData: reviews, loading } = useLoadData(url);
   if (loading) {
@@ -54,7 +56,10 @@ const Reviews = () => {
       </Swiper>
 
       <div className="text-center mt-4">
-        <button className="btn btn-primary text-white capitalize font-normal">
+        <button
+          onClick={() => navigate("/dashboard/review")}
+          className="btn btn-primary text-white capitalize font-normal"
+        >
           Write a Review
         </button>
       </div>
