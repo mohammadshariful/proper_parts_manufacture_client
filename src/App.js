@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Blogs from "./pages/Blogs/Blogs";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Home from "./pages/Home/Home";
+import MyPortfolio from "./pages/MyPortfolio/MyPortfolio";
 import NotFound from "./pages/NotFound/NotFound";
 import Purchase from "./pages/Purchase/Purchase";
 import Footer from "./pages/Shared/Footer/Footer";
@@ -35,6 +36,7 @@ function App() {
           }
         ></Route>
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />

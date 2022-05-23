@@ -1,7 +1,12 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { FaHome, FaNewspaper, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaHome,
+  FaNewspaper,
+  FaSignOutAlt,
+  FaUserCircle,
+} from "react-icons/fa";
 import { FiLogIn } from "react-icons/fi";
 import { MdDashboard } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -29,6 +34,12 @@ const Navbar = () => {
         <Link to="/blogs">
           <FaNewspaper />
           Blogs
+        </Link>
+      </li>
+      <li>
+        <Link to="/portfolio">
+          <FaUserCircle />
+          Portfolio
         </Link>
       </li>
       <li>

@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <div className="drawer drawer-mobile">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content w-[90%] mx-auto my-4">
+      <div className="drawer-content w-[90%] mx-auto my-10">
         <h2 className="text-2xl text-center text-primary">
           Welcome To DashBoard
         </h2>
