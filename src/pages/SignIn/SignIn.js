@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SignInImg from "../../assets/login/signin.jpg";
 import auth from "../../Firebase/Firebase.init";
+import ForgetPassword from "../ForgetPassword/ForgetPassword";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignIn = () => {
+  const [reset, setReset] = useState(false);
+
   const {
     register,
     formState: { errors },
@@ -123,7 +126,11 @@ const SignIn = () => {
                   value="Sign In"
                 />
               </form>
-              <label className="modal-button text-right text-primary cursor-pointer">
+              <label
+                onClick={() => setReset(true)}
+                htmlFor="forgetPasswordModal"
+                className="modal-button text-right text-primary cursor-pointer"
+              >
                 Forget your password?
               </label>
               <SocialLogin />
@@ -137,6 +144,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
+      {reset && <ForgetPassword setReset={setReset} />}
     </div>
   );
 };
