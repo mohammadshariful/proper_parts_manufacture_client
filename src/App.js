@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Blogs from "./pages/Blogs/Blogs";
+import AddReview from "./pages/Dashboard/AddReview";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Home from "./pages/Home/Home";
 import MyPortfolio from "./pages/MyPortfolio/MyPortfolio";
@@ -34,7 +35,9 @@ function App() {
               <Dashboard />
             </RequireAuth>
           }
-        ></Route>
+        >
+          <Route path="review" element={<AddReview />} />
+        </Route>
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="/signin" element={<SignIn />} />

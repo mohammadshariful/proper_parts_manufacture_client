@@ -7,10 +7,17 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import useLoadData from "../../hooks/useLoadData";
+import Loading from "../Shared/Loading/Loading";
 import UserReview from "./UserReview";
 
 const Reviews = () => {
-  const reviews = [1, 2, 3, 4];
+  const url = "http://localhost:5000/reviews";
+  const { storeData: reviews, loading } = useLoadData(url);
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="my-20 py-10 bg-white shadow-sm">
       <h3 className="text-center text-2xl mb-3">What out Customers Says</h3>
@@ -39,9 +46,9 @@ const Reviews = () => {
         modules={[Keyboard, Scrollbar, Navigation, Autoplay]}
         className="mySwiper"
       >
-        {reviews.map((r, index) => (
-          <SwiperSlide key={index}>
-            <UserReview />
+        {reviews.map((review) => (
+          <SwiperSlide key={review._id}>
+            <UserReview review={review} />
           </SwiperSlide>
         ))}
       </Swiper>
