@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useLoadData from "../../hooks/useLoadData";
+import Loading from "../Shared/Loading/Loading";
 import Parts from "./Parts";
-
 const CarParts = () => {
-  const [carsParts, setCarParts] = useState([]);
-  useEffect(() => {
-    fetch("data.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setCarParts(data);
-      });
-  }, []);
+  const url = "http://localhost:5000/tools";
+  const { storeData: carsParts, loading } = useLoadData(url);
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="my-20 py-10 bg-white shadow-sm">
