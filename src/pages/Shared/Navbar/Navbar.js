@@ -1,11 +1,16 @@
+import { signOut } from "firebase/auth";
 import React from "react";
-import { FaHome, FaNewspaper } from "react-icons/fa";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { FaHome, FaNewspaper, FaSignOutAlt } from "react-icons/fa";
 import { FiLogIn } from "react-icons/fi";
 import { MdDashboard } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/icons/logo.png";
+import auth from "../../../Firebase/Firebase.init";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
   const menu = (
     <>
       <li>
@@ -27,10 +32,23 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link to="/signin">
-          <FiLogIn />
-          SignIn
-        </Link>
+        {user ? (
+          <Link
+            to="/signin"
+            onClick={() => {
+              signOut(auth);
+              localStorage.removeItem("accessToken");
+            }}
+          >
+            <FaSignOutAlt />
+            SignOut
+          </Link>
+        ) : (
+          <Link to="/signin">
+            <FiLogIn />
+            SignIn
+          </Link>
+        )}
       </li>
     </>
   );
