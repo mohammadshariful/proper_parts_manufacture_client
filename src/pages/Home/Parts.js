@@ -1,8 +1,12 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-
+import auth from "../../Firebase/Firebase.init";
+import useAdmin from "../../hooks/useAdmin";
 const Parts = ({ parts }) => {
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
+  const [admin] = useAdmin(user);
   const {
     _id,
     availableQuantity,
@@ -33,6 +37,7 @@ const Parts = ({ parts }) => {
         <p>Available Quantity : {availableQuantity}</p>
         <div className="card-actions justify-end">
           <button
+            disabled={admin && true}
             onClick={() => navigate(`/purchase/${_id}`)}
             className="btn btn-primary text-white"
           >

@@ -2,6 +2,7 @@ import React from "react";
 import useLoadData from "../../hooks/useLoadData";
 import Loading from "../Shared/Loading/Loading";
 import Parts from "./Parts";
+
 const CarParts = () => {
   const url = "http://localhost:5000/tools";
   const { storeData: carsParts, loading } = useLoadData(url);

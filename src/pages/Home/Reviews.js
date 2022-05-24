@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Autoplay, Keyboard, Navigation, Scrollbar } from "swiper";
 // Import Swiper styles
@@ -8,12 +9,16 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import auth from "../../Firebase/Firebase.init";
+import useAdmin from "../../hooks/useAdmin";
 import useLoadData from "../../hooks/useLoadData";
 import Loading from "../Shared/Loading/Loading";
 import UserReview from "./UserReview";
 
 const Reviews = () => {
   const navigate = useNavigate();
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   const url = "http://localhost:5000/reviews";
   const { storeData: reviews, loading } = useLoadData(url);
   if (loading) {
@@ -57,6 +62,7 @@ const Reviews = () => {
 
       <div className="text-center mt-4">
         <button
+          disabled={admin && true}
           onClick={() => navigate("/dashboard/review")}
           className="btn btn-primary text-white capitalize font-normal"
         >

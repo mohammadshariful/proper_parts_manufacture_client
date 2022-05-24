@@ -100,7 +100,7 @@ const UpdateProfile = ({ refetch, setUpdate }) => {
             </div>
 
             <input
-              className="btn btn-primary capitalize mt-4 font-normal w-full max-w-xs text-white"
+              className="btn btn-success capitalize mt-4 font-normal w-full max-w-xs text-white"
               type="submit"
               value="Update"
             />
