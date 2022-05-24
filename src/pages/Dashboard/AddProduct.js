@@ -59,9 +59,9 @@ const AddProduct = () => {
   };
 
   return (
-    <div class="card w-full mx-auto lg:max-w-lg bg-base-100 shadow-xl">
-      <div class="card-body">
-        <h2 class="text-2xl text-center">Add a new Product</h2>
+    <div className="card w-full mx-auto lg:max-w-lg bg-base-100 shadow-xl">
+      <div className="card-body">
+        <h2 className="text-2xl text-center">Add a new Product</h2>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-items-center gap-5"

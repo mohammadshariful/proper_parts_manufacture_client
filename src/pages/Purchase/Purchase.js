@@ -23,7 +23,6 @@ const Purchase = () => {
     return <Loading />;
   }
   const {
-    _id,
     price,
     name,
     minimumOrderQuantity,
@@ -44,9 +43,9 @@ const Purchase = () => {
       return;
     } else {
       const order = {
-        purchaseId: _id,
         purchaseName: name,
         quantity: quantity,
+        price: price,
         img: img,
         userName: user?.displayName,
         email: user?.email,
