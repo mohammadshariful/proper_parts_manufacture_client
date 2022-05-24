@@ -20,10 +20,14 @@ const Parts = ({ parts }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
-        <p>
-          {description.slice(0, 250)}
-          <span className="text-gray-500 cursor-pointer">...see more</span>
-        </p>
+        {description.length >= 250 ? (
+          <p>
+            {description.slice(0, 250)}
+            <span className="text-gray-500 cursor-pointer">...see more</span>
+          </p>
+        ) : (
+          <p>{description}</p>
+        )}
         <p className="font-bold text-xl">Price :${price}</p>
         <p>Minimum Order Quantity :{minimumOrderQuantity}</p>
         <p>Available Quantity : {availableQuantity}</p>
