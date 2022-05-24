@@ -31,7 +31,7 @@ const Dashboard = () => {
             </>
           )}
           <li>
-            <Link to="/">My Profile</Link>
+            <Link to="/dashboard/profile">My Profile</Link>
           </li>
           {admin && (
             <>

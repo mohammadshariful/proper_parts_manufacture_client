@@ -9,8 +9,7 @@ const MyOrder = () => {
   const [user] = useAuthState(auth);
   const [cancel, setCancel] = useState(null);
 
-  const url = `http://localhost:5000/myPurchase/${user?.email}`;
-
+  const url = `http://localhost:5000/purchase/${user?.email}`;
   const {
     data: orders,
     isLoading,

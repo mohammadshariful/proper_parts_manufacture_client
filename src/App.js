@@ -6,6 +6,8 @@ import AddProduct from "./pages/Dashboard/AddProduct";
 import AddReview from "./pages/Dashboard/AddReview";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import MyOrder from "./pages/Dashboard/MyOrder";
+import MyProfile from "./pages/Dashboard/MyProfile";
+import Payment from "./pages/Dashboard/Payment";
 import Users from "./pages/Dashboard/Users";
 import Home from "./pages/Home/Home";
 import MyPortfolio from "./pages/MyPortfolio/MyPortfolio";
@@ -41,8 +43,10 @@ function App() {
         >
           <Route index element={<MyOrder />} />
           <Route path="review" element={<AddReview />} />
+          <Route path="profile" element={<MyProfile />} />
           <Route path="addProduct" element={<AddProduct />} />
           <Route path="admin" element={<Users />} />
+          <Route path="payment/:id" element={<Payment />} />
         </Route>
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/portfolio" element={<MyPortfolio />} />

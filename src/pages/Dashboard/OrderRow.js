@@ -8,7 +8,7 @@ const OrderRow = ({ order, index, setCancel }) => {
       <th>{index + 1}</th>
       <th>{order?.purchaseName}</th>
       <th>{order?.quantity}</th>
-      <th>{order?.price}</th>
+      <th>${order?.price}</th>
       <td>
         {order.price && order.paid ? (
           <div>
