@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../Firebase/Firebase.init";
 import Loading from "../Shared/Loading/Loading";
+import TitleChange from "../Shared/TitleChange/TitleChange";
 const Purchase = () => {
   const { id } = useParams();
   const [user] = useAuthState(auth);
@@ -84,6 +85,7 @@ const Purchase = () => {
   };
   return (
     <div className="w-[90%] mx-auto my-10">
+      <TitleChange title="Purchase" />
       <div className="flex flex-col lg:flex-row justify-between bg-white shadow-sm gap-5">
         <div className=" w-full lg:w-50">
           <div className="card h-full bg-base-100 shadow-xl">

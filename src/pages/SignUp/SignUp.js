@@ -11,7 +11,7 @@ import auth from "../../Firebase/Firebase.init";
 import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
-
+import TitleChange from "../Shared/TitleChange/TitleChange";
 const SignUp = () => {
   const {
     register,
@@ -40,6 +40,7 @@ const SignUp = () => {
   };
   return (
     <div className="hero min-h-screen bg-base-100">
+      <TitleChange title="SignUp" />
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div>
           <img className="md:max-w-md" src={SignUpImg} alt="" />

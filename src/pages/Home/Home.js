@@ -1,4 +1,5 @@
 import React from "react";
+import TitleChange from "../Shared/TitleChange/TitleChange";
 import Banner from "./Banner";
 import BlogArea from "./BlogArea";
 import Brands from "./Brands";
@@ -9,6 +10,7 @@ import Reviews from "./Reviews";
 const Home = () => {
   return (
     <div className="w-[90%] mx-auto my-10">
+      <TitleChange title="Home" />
       <Banner />
       <CarParts />
       <BusinessSummary />

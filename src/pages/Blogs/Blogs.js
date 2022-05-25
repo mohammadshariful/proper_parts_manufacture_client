@@ -1,9 +1,11 @@
 import React from "react";
 import question1 from "../../assets/Blogs/react-perfomance.png";
 import authorImg from "../../assets/images/author-img.jpg";
+import TitleChange from "../Shared/TitleChange/TitleChange";
 const Blogs = () => {
   return (
     <div className="w-[90%] mx-auto my-10">
+      <TitleChange title="Blogs" />
       <div className="blog-1 bg-white p-10 shadow-xl rounded-lg mb-3">
         <h2 className="text-xl">
           Question :

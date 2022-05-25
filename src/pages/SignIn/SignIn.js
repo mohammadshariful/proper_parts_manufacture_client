@@ -9,7 +9,7 @@ import useToken from "../../hooks/useToken";
 import ForgetPassword from "../ForgetPassword/ForgetPassword";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
-
+import TitleChange from "../Shared/TitleChange/TitleChange";
 const SignIn = () => {
   const [reset, setReset] = useState(false);
 
@@ -39,6 +39,7 @@ const SignIn = () => {
   };
   return (
     <div className="hero min-h-screen bg-base-100">
+      <TitleChange title="SignIn" />
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div>
           <img className="md:max-w-md" src={SignInImg} alt="" />

@@ -1,8 +1,9 @@
 import React from "react";
-
+import TitleChange from "../Shared/TitleChange/TitleChange";
 const MyPortfolio = () => {
   return (
     <div className="w-[90%] mx-auto my-10">
+      <TitleChange title="Portfolio" />
       <div className="card w-full bg-base-100 shadow px-4">
         <div className="card-body">
           <h2 className="text-xl lg:text-2xl">
