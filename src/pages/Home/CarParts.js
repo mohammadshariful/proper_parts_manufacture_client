@@ -4,7 +4,7 @@ import Loading from "../Shared/Loading/Loading";
 import Parts from "./Parts";
 
 const CarParts = () => {
-  const url = `http://localhost:5000/tools`;
+  const url = `https://manufacture2022.herokuapp.com/tools`;
   const { data: carsParts, isLoading } = useQuery("parts", () =>
     fetch(url).then((res) => res.json())
   );

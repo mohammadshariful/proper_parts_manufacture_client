@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
   const { _id, price, email, userName } = order;
 
   useEffect(() => {
-    const url = "http://localhost:5000/create-payment-intent";
+    const url = "https://manufacture2022.herokuapp.com/create-payment-intent";
     fetch(url, {
       method: "POST",
       headers: {
@@ -74,7 +74,7 @@ const CheckoutForm = ({ order }) => {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/myPurchase/${_id}`, {
+      fetch(`https://manufacture2022.herokuapp.com/myPurchase/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

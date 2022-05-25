@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const ProductModal = ({ product, refetch, setProduct }) => {
   const deleteProduct = (id) => {
-    fetch(`http://localhost:5000/tools/${id}`, {
+    fetch(`https://manufacture2022.herokuapp.com/tools/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

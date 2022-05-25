@@ -8,7 +8,7 @@ import UpdateProfile from "./UpdateProfile";
 const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [update, setUpdate] = useState(false);
-  const url = `http://localhost:5000/updateInfo/${user?.email}`;
+  const url = `https://manufacture2022.herokuapp.com/updateInfo/${user?.email}`;
   const {
     data: profile,
     isLoading,

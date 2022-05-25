@@ -37,7 +37,7 @@ const AddProduct = () => {
           };
 
           //send to product database
-          fetch("http://localhost:5000/tools", {
+          fetch("https://manufacture2022.herokuapp.com/tools", {
             method: "POST",
             headers: {
               "content-type": "application/json",

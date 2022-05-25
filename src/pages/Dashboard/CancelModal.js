@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const CancelModal = ({ cancel, refetch, setCancel }) => {
   const cancelOrder = (id) => {
-    fetch(`http://localhost:5000/myPurchase/${id}`, {
+    fetch(`https://manufacture2022.herokuapp.com/myPurchase/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

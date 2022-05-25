@@ -19,7 +19,7 @@ const AddReview = () => {
       userName: user?.displayName,
       photoUrl: user?.photoURL,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://manufacture2022.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

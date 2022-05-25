@@ -18,7 +18,7 @@ const Parts = ({ parts }) => {
   } = parts;
 
   return (
-    <div className="card h-full bg-base-100 shadow-xl">
+    <div data-aos="fade-up" className="card h-full bg-base-100 shadow-xl">
       <figure>
         <img src={img} alt={name} />
       </figure>

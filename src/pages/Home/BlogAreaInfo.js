@@ -3,7 +3,7 @@ import React from "react";
 const BlogAreaInfo = ({ blog }) => {
   const { date, describe, img, name } = blog;
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div data-aos="fade-up" className="card bg-base-100 shadow-xl">
       <figure className="relative">
         <img src={img} alt={name} className="rounded-sm" />
         <div className="absolute left-0 bottom-0">

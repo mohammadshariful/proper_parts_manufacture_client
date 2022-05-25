@@ -16,7 +16,7 @@ const Purchase = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const url = `http://localhost:5000/tools/${id}`;
+  const url = `https://manufacture2022.herokuapp.com/tools/${id}`;
   const { data: tool, isLoading } = useQuery(["tool", id], () =>
     fetch(url, {
       method: "GET",
@@ -59,7 +59,7 @@ const Purchase = () => {
         address: data.address,
         phone: data.phone,
       };
-      fetch("http://localhost:5000/purchase", {
+      fetch("https://manufacture2022.herokuapp.com/purchase", {
         method: "POST",
         headers: {
           "content-type": "application/json",

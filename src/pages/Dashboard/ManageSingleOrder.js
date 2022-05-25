@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const ManageSingleOrder = ({ index, order, refetch, setOrderDelete }) => {
   const handleStatus = (id) => {
-    const url = `http://localhost:5000/manageOrder/${id}`;
+    const url = `https://manufacture2022.herokuapp.com/manageOrder/${id}`;
     fetch(url, {
       method: "PATCH",
       headers: {

@@ -10,7 +10,7 @@ const MyOrder = () => {
   const [user] = useAuthState(auth);
   const [cancel, setCancel] = useState(null);
   const [admin] = useAdmin(user);
-  const url = `http://localhost:5000/purchase/${user?.email}`;
+  const url = `https://manufacture2022.herokuapp.com/purchase/${user?.email}`;
   const {
     data: orders,
     isLoading,
