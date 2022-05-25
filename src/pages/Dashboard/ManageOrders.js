@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading/Loading";
 import ManageSingleOrder from "./ManageSingleOrder";
+import OrderModal from "./OrderModal";
 const ManageOrders = () => {
+  const [orderDelete, setOrderDelete] = useState(null);
   const {
     data: orders,
     isLoading,
@@ -44,11 +46,19 @@ const ManageOrders = () => {
                 index={index}
                 order={order}
                 refetch={refetch}
+                setOrderDelete={setOrderDelete}
               />
             ))}
           </tbody>
         </table>
       </div>
+      {orderDelete && (
+        <OrderModal
+          orderDelete={orderDelete}
+          refetch={refetch}
+          setOrderDelete={setOrderDelete}
+        />
+      )}
     </div>
   );
 };

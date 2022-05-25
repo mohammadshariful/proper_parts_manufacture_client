@@ -1,6 +1,7 @@
 import React from "react";
+import { toast } from "react-toastify";
 
-const ManageSingleOrder = ({ index, order, refetch }) => {
+const ManageSingleOrder = ({ index, order, refetch, setOrderDelete }) => {
   const handleStatus = (id) => {
     const url = `http://localhost:5000/manageOrder/${id}`;
     fetch(url, {
@@ -13,6 +14,7 @@ const ManageSingleOrder = ({ index, order, refetch }) => {
       .then((res) => res.json())
       .then((result) => {
         if (result.upsertedCount) {
+          toast.success("Order Shippment");
           refetch();
         }
       });
@@ -49,7 +51,17 @@ const ManageSingleOrder = ({ index, order, refetch }) => {
         )}
       </td>
       <td>
-        <button className="btn btn-error text-white btn-sm">Delete</button>
+        {order?.paid ? (
+          <p className="text-success">Already Paid</p>
+        ) : (
+          <label
+            onClick={() => setOrderDelete(order)}
+            htmlFor="orderModal"
+            className="btn btn-sm btn-error  modal-button text-white"
+          >
+            Delete
+          </label>
+        )}
       </td>
     </tr>
   );
