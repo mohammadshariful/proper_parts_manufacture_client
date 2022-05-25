@@ -20,6 +20,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import Purchase from "./pages/Purchase/Purchase";
 import Footer from "./pages/Shared/Footer/Footer";
 import Navbar from "./pages/Shared/Navbar/Navbar";
+import RequireAdmin from "./pages/Shared/RequireAdmin/RequireAdmin";
 import RequireAuth from "./pages/Shared/RequireAuth/RequireAuth";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
@@ -51,10 +52,38 @@ function App() {
           <Route index element={<MyOrder />} />
           <Route path="review" element={<AddReview />} />
           <Route path="profile" element={<MyProfile />} />
-          <Route path="manageOrder" element={<ManageOrders />} />
-          <Route path="addProduct" element={<AddProduct />} />
-          <Route path="admin" element={<Users />} />
-          <Route path="manageProducts" element={<ManageProducts />} />
+          <Route
+            path="manageOrder"
+            element={
+              <RequireAdmin>
+                <ManageOrders />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="addProduct"
+            element={
+              <RequireAdmin>
+                <AddProduct />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="admin"
+            element={
+              <RequireAdmin>
+                <Users />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="manageProducts"
+            element={
+              <RequireAdmin>
+                <ManageProducts />
+              </RequireAdmin>
+            }
+          />
           <Route path="payment/:id" element={<Payment />} />
         </Route>
         <Route path="/blogs" element={<Blogs />} />

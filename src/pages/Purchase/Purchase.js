@@ -42,7 +42,7 @@ const Purchase = () => {
     const quantity = parseInt(data.quantity);
     if (minimumOrderQuantity > quantity || quantity > availableQuantity) {
       toast.error(
-        `Order Quantity will become minimum ${minimumOrderQuantity} and less than ${availableQuantity} `,
+        `Order Quantity minimum ${minimumOrderQuantity} and less than ${availableQuantity} `,
         {
           position: toast.POSITION.TOP_CENTER,
         }

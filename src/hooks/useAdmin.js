@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 
 const useAdmin = (user) => {
   const [admin, setAdmin] = useState(false);
-  const [adminLoading, setAdminLoading] = useState(false);
+  const [adminLoading, setAdminLoading] = useState(true);
   useEffect(() => {
     const email = user?.email;
-    setAdminLoading(true);
     if (email) {
       const url = `https://manufacture2022.herokuapp.com/admin/${email}`;
       fetch(url, {
