@@ -17,7 +17,13 @@ const Purchase = () => {
   } = useForm();
   const url = `http://localhost:5000/tools/${id}`;
   const { data: tool, isLoading } = useQuery(["tool", id], () =>
-    fetch(url).then((res) => res.json())
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading />;

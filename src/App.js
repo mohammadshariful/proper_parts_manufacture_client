@@ -5,6 +5,8 @@ import Blogs from "./pages/Blogs/Blogs";
 import AddProduct from "./pages/Dashboard/AddProduct";
 import AddReview from "./pages/Dashboard/AddReview";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import ManageOrders from "./pages/Dashboard/ManageOrders";
+import ManageProducts from "./pages/Dashboard/ManageProducts";
 import MyOrder from "./pages/Dashboard/MyOrder";
 import MyProfile from "./pages/Dashboard/MyProfile";
 import Payment from "./pages/Dashboard/Payment";
@@ -44,8 +46,10 @@ function App() {
           <Route index element={<MyOrder />} />
           <Route path="review" element={<AddReview />} />
           <Route path="profile" element={<MyProfile />} />
+          <Route path="manageOrder" element={<ManageOrders />} />
           <Route path="addProduct" element={<AddProduct />} />
           <Route path="admin" element={<Users />} />
+          <Route path="manageProducts" element={<ManageProducts />} />
           <Route path="payment/:id" element={<Payment />} />
         </Route>
         <Route path="/blogs" element={<Blogs />} />

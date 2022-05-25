@@ -5,7 +5,13 @@ const useLoadData = (url) => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    fetch(url)
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((result) => {
         setStoreData(result);
