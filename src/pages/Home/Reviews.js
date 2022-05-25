@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { Autoplay, Keyboard, Navigation, Scrollbar } from "swiper";
 // Import Swiper styles
@@ -11,7 +12,6 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import auth from "../../Firebase/Firebase.init";
 import useAdmin from "../../hooks/useAdmin";
-import useLoadData from "../../hooks/useLoadData";
 import Loading from "../Shared/Loading/Loading";
 import UserReview from "./UserReview";
 
@@ -19,9 +19,12 @@ const Reviews = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
-  const url = "http://localhost:5000/reviews";
-  const { storeData: reviews, loading } = useLoadData(url);
-  if (loading) {
+
+  const url = `http://localhost:5000/reviews`;
+  const { data: reviews, isLoading } = useQuery("reviews", () =>
+    fetch(url).then((res) => res.json())
+  );
+  if (isLoading) {
     return <Loading />;
   }
 

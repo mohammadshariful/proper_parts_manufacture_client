@@ -1,12 +1,14 @@
 import React from "react";
-import useLoadData from "../../hooks/useLoadData";
+import { useQuery } from "react-query";
 import Loading from "../Shared/Loading/Loading";
 import Parts from "./Parts";
 
 const CarParts = () => {
-  const url = "http://localhost:5000/tools";
-  const { storeData: carsParts, loading } = useLoadData(url);
-  if (loading) {
+  const url = `http://localhost:5000/tools`;
+  const { data: carsParts, isLoading } = useQuery("parts", () =>
+    fetch(url).then((res) => res.json())
+  );
+  if (isLoading) {
     return <Loading />;
   }
   const newCarParts = [...carsParts].reverse();
