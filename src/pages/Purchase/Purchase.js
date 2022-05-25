@@ -139,6 +139,7 @@ const Purchase = () => {
                   </label>
                   <input
                     type="number"
+                    defaultValue={minimumOrderQuantity}
                     placeholder="Enter Quantity"
                     className="input input-bordered w-full max-w-xs"
                     {...register("quantity", {
