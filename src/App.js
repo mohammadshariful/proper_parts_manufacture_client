@@ -15,7 +15,7 @@ import MyProfile from "./pages/Dashboard/MyProfile";
 import Payment from "./pages/Dashboard/Payment";
 import Users from "./pages/Dashboard/Users";
 import Home from "./pages/Home/Home";
-import MyPortfolio from "./pages/MyPortfolio/MyPortfolio";
+import Portfolio from "./pages/MyPortfolio/Portfolio";
 import NotFound from "./pages/NotFound/NotFound";
 import Purchase from "./pages/Purchase/Purchase";
 import Footer from "./pages/Shared/Footer/Footer";
@@ -87,7 +87,7 @@ function App() {
           <Route path="payment/:id" element={<Payment />} />
         </Route>
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/portfolio" element={<MyPortfolio />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />
