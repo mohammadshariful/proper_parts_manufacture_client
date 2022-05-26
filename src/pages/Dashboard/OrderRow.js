@@ -29,7 +29,8 @@ const OrderRow = ({ order, index, setCancel }) => {
           </button>
         )}
       </td>
-      <th>
+      <td>{order.status}</td>
+      <td>
         {!order.paid && (
           <label
             onClick={() => setCancel(order)}
@@ -39,7 +40,7 @@ const OrderRow = ({ order, index, setCancel }) => {
             Cancel
           </label>
         )}
-      </th>
+      </td>
     </tr>
   );
 };

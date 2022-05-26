@@ -33,6 +33,11 @@ const CancelModal = ({ cancel, refetch, setCancel }) => {
           <h3 className="text-center lg:text-lg text-error">
             Are You sure want to cancel {cancel?.purchaseName}
           </h3>
+          <div className="avatar">
+            <div className="w-14 rounded">
+              <img src={cancel?.img} alt="" />
+            </div>
+          </div>
           <div className="modal-action">
             <button
               onClick={() => cancelOrder(cancel._id)}

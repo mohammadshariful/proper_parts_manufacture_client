@@ -20,33 +20,29 @@ const Footer = () => {
           <span className="footer-title">Contact Us</span>
           <ul className="cursor-pointer">
             <li className="flex items-center mb-2">
-              <MdLocationOn className="text-2xl" />
+              <MdLocationOn className="text-2xl text-red-300" />
               <div className="ml-2">
                 <p className="font-bold">Address </p>
                 <span>4800 Industrial Blvd. Door # 43-45 Peru, IL 61354</span>
               </div>
             </li>
             <li className="flex items-center mb-2">
-              <MdLocalPhone className="text-2xl" />
+              <MdLocalPhone className="text-2xl text-green-300" />
               <div className="ml-2">
                 <p className="font-bold">Phone Number </p>
                 <span>1-866-529-0412</span>
               </div>
             </li>
             <li className="flex items-center mb-2">
-              <MdEmail className="text-xl" />
+              <MdEmail className="text-xl text-green-300" />
               <span className="ml-2">Email Us</span>
             </li>
             <li className="flex items-center mb-2">
-              <MdEmail className="text-xl" />
-              <span className="ml-2">Email Us</span>
-            </li>
-            <li className="flex items-center mb-2">
-              <BsFillChatLeftTextFill className="text-xl" />
+              <BsFillChatLeftTextFill className="text-xl text-green-300" />
               <span className="ml-2">Live Chat</span>
             </li>
             <li className="flex items-center mb-2">
-              <MdFeedback className="text-xl" />
+              <MdFeedback className="text-xl text-red-400" />
               <span className="ml-2">Website Feedback</span>
             </li>
           </ul>
@@ -137,13 +133,13 @@ const Footer = () => {
         <div className="cursor-pointer">
           <div className="grid grid-flow-col gap-4">
             <li className="list-none text-2xl">
-              <FaTwitter />
+              <FaTwitter className="text-blue-400" />
             </li>
             <li className="list-none text-2xl">
-              <FaYoutube />
+              <FaYoutube className="text-red-500" />
             </li>
             <li className="list-none text-2xl">
-              <BsFacebook />
+              <BsFacebook className="text-blue-600" />
             </li>
           </div>
         </div>

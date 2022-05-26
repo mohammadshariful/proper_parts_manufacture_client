@@ -20,25 +20,25 @@ const Navbar = () => {
     <>
       <li>
         <Link to="/">
-          <FaHome />
+          <FaHome className="text-primary" />
           Home
         </Link>
       </li>
       <li>
         <Link to="/dashboard">
-          <MdDashboard />
+          <MdDashboard className="text-primary" />
           Dashboard
         </Link>
       </li>
       <li>
         <Link to="/blogs">
-          <FaNewspaper />
+          <FaNewspaper className="text-primary" />
           Blogs
         </Link>
       </li>
       <li>
         <Link to="/portfolio">
-          <FaUserCircle />
+          <FaUserCircle className="text-primary" />
           Portfolio
         </Link>
       </li>
@@ -51,12 +51,12 @@ const Navbar = () => {
               localStorage.removeItem("accessToken");
             }}
           >
-            <FaSignOutAlt />
+            <FaSignOutAlt className="text-primary" />
             SignOut
           </Link>
         ) : (
           <Link to="/signin">
-            <FiLogIn />
+            <FiLogIn className="text-primary" />
             SignIn
           </Link>
         )}
@@ -92,34 +92,36 @@ const Navbar = () => {
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
           <img className="w-8" src={Logo} alt="logo" />
-          Proper Parts
+          <span className="text-primary">Proper Parts</span>
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menu}</ul>
       </div>
-      <div className="navbar-end lg:hidden">
-        <label
-          htmlFor="dashboard-sidebar"
-          tabIndex="1"
-          className="btn btn-ghost lg:hidden"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+      {user && (
+        <div className="navbar-end lg:hidden">
+          <label
+            htmlFor="dashboard-sidebar"
+            tabIndex="1"
+            className="btn btn-ghost lg:hidden"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h8m-8 6h16"
-            />
-          </svg>
-        </label>
-      </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+        </div>
+      )}
     </div>
   );
 };

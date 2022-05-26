@@ -15,7 +15,14 @@ const CarParts = () => {
   const sliceCarParts = newCarParts.slice(0, 6);
   return (
     <div className="my-20 py-10 bg-white shadow-sm">
-      <h2 className="text-center text-2xl mb-4">Cars All Parts Here</h2>
+      <h2 className="text-center text-2xl mb-4">
+        Millions of High-quality Products
+      </h2>
+      <p className="text-center mb-4">
+        Proper Parts Industry currently has more than 40 million pieces of
+        product information from 27 industries. Besides, based on different
+        procurement demands from different buyers.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center  gap-8">
         {sliceCarParts.map((parts) => (
           <Parts key={parts?._id} parts={parts} />
